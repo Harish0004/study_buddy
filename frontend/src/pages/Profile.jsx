@@ -15,7 +15,9 @@ const Profile = () => {
 
 	useEffect(() => {
 		axios
-			.get("http://localhost:5000/user/profile", { withCredentials: true }) // Ensure credentials like cookies are sent
+			.get("https://study-buddy-backend-sejg.onrender.com/user/profile", {
+				withCredentials: true,
+			}) // Ensure credentials like cookies are sent
 			.then((res) => {
 				const { username, bio, email, interest, img } = res.data;
 				setUsername(username);
@@ -66,7 +68,7 @@ const Profile = () => {
 
 			// Axios POST request
 			const response = await axios.post(
-				"http://localhost:5000/user/profile",
+				"https://study-buddy-backend-sejg.onrender.com/user/profile",
 				dataToSend,
 			);
 

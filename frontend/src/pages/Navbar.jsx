@@ -9,7 +9,9 @@ const Navbar = () => {
 	axios.defaults.withCredentials = true;
 	const handleLogout = async () => {
 		try {
-			await axios.get("http://localhost:5000/user/logout");
+			await axios.get(
+				"https://study-buddy-backend-sejg.onrender.com/user/logout",
+			);
 			console.log("logged out successfully");
 			navigate("/");
 		} catch {

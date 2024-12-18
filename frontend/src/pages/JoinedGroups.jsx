@@ -14,7 +14,7 @@ const JoinedGroups = () => {
 		const fetchGroups = async () => {
 			try {
 				const response = await axios.get(
-					"http://localhost:5000/group/user/groups",
+					"https://study-buddy-backend-sejg.onrender.com/group/user/groups",
 				);
 				setGroups(response.data);
 				console.log(groups);

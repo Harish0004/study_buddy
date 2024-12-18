@@ -17,15 +17,17 @@ const Home = () => {
 
 	useEffect(() => {
 		try {
-			axios.get("http://localhost:5000/").then((res) => {
-				if (res.data.valid) {
-					console.log("user name stored in session");
-				} else {
-					console.log("user not in session");
-					console.log(res.data.valid);
-					navigate("/");
-				}
-			});
+			axios
+				.get("https://study-buddy-backend-sejg.onrender.com/")
+				.then((res) => {
+					if (res.data.valid) {
+						console.log("user name stored in session");
+					} else {
+						console.log("user not in session");
+						console.log(res.data.valid);
+						navigate("/");
+					}
+				});
 		} catch {
 			console.log("error occured in login");
 		}

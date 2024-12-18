@@ -21,7 +21,7 @@ const Login = () => {
 			password,
 		};
 		axios
-			.post("http://localhost:5000/user/login", user)
+			.post("https://study-buddy-backend-sejg.onrender.com/user/login", user)
 			.then((result) => {
 				if (result.data.login) {
 					console.log(`User  logged in at ${new Date()}`);

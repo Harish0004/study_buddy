@@ -17,7 +17,9 @@ const Message = () => {
 	useEffect(() => {
 		const fetchUser = async () => {
 			try {
-				const res = await axios.get("http://localhost:5000/getuser");
+				const res = await axios.get(
+					"https://study-buddy-backend-sejg.onrender.com/getuser",
+				);
 				setName(res.data);
 				console.log(res.data);
 			} catch (error) {
@@ -28,7 +30,7 @@ const Message = () => {
 		const fetchMessages = async () => {
 			try {
 				const response = await axios.get(
-					`http://localhost:5000/api/messages?groupId=${groupId}`,
+					`https://study-buddy-backend-sejg.onrender.com/api/messages?groupId=${groupId}`,
 				);
 				setMessages(response.data);
 				scrollToBottom(); // Scroll to the bottom initially
@@ -61,7 +63,7 @@ const Message = () => {
 
 		try {
 			const response = await axios.post(
-				"http://localhost:5000/api/messages",
+				"https://study-buddy-backend-sejg.onrender.com/api/messages",
 				formData,
 				{
 					headers: {
@@ -104,7 +106,7 @@ const Message = () => {
 								<div>
 									<a
 										className="download"
-										href={`http://localhost:5000/uploads/${message.file}`}
+										href={`https://study-buddy-backend-sejg.onrender.com/uploads/${message.file}`}
 										target="_blank"
 										rel="noopener noreferrer"
 										download

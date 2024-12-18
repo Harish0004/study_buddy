@@ -54,7 +54,7 @@ const Register = () => {
 
 		// Sending post request
 		axios
-			.post("http://localhost:5000/user/register", user)
+			.post("https://study-buddy-backend-sejg.onrender.com/user/register", user)
 			.then((result) => {
 				console.log("Request handled successfully");
 				alert("Registered successfully");

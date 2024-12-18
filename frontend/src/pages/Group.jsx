@@ -13,7 +13,9 @@ const Group = () => {
 	useEffect(() => {
 		const fetchGroups = async () => {
 			try {
-				const response = await axios.get("http://localhost:5000/group/groups");
+				const response = await axios.get(
+					"https://study-buddy-backend-sejg.onrender.com/group/groups",
+				);
 				setGroups(response.data);
 			} catch (err) {
 				console.error("Error fetching groups:", err);
@@ -26,9 +28,12 @@ const Group = () => {
 	// Function to handle joining a group
 	const handleJoinGroup = async (groupId) => {
 		try {
-			const response = await axios.post("http://localhost:5000/group/join", {
-				groupId,
-			});
+			const response = await axios.post(
+				"https://study-buddy-backend-sejg.onrender.com/group/join",
+				{
+					groupId,
+				},
+			);
 			alert(response.data.message); // Show success message
 		} catch (error) {
 			const errorMessage =
@@ -41,7 +46,7 @@ const Group = () => {
 	const searchGroups = async () => {
 		try {
 			const response = await axios.get(
-				`http://localhost:5000/group/search?query=${searchQuery}`,
+				`https://study-buddy-backend-sejg.onrender.com/group/search?query=${searchQuery}`,
 			);
 			setGroups(response.data); // Update the groups with the search result
 		} catch (err) {

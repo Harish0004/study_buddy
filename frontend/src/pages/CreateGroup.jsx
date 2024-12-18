@@ -42,11 +42,14 @@ const CreateGroup = () => {
 		}
 
 		try {
-			const response = await axios.post("http://localhost:5000/group/create", {
-				groupName,
-				groupDesc,
-				groupCategory,
-			});
+			const response = await axios.post(
+				"https://study-buddy-backend-sejg.onrender.com/group/create",
+				{
+					groupName,
+					groupDesc,
+					groupCategory,
+				},
+			);
 
 			if (response.status === 201) {
 				setMessage("Group created successfully!");
